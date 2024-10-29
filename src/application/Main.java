@@ -24,6 +24,7 @@ public class Main extends Application{
         AddPartView partView = new AddPartView();
         SearchPart  searchView = new SearchPart();
         CreateBOMView bomView = new CreateBOMView();
+        SearchBOM searchBOMView = new SearchBOM();
 
         BorderPane layout = new BorderPane();
         layout.setPrefSize(600,600);
@@ -34,6 +35,7 @@ public class Main extends Application{
         HBox topButtons = new HBox();
         topButtons.setSpacing(10);
         topButtons.setAlignment(Pos.CENTER);
+        topButtons.setPadding(new Insets(10, 10, 10, 10));
         Button addPart = new Button("Add Part");
         Button createBOM = new Button("Create BOM");
         Button searchPart = new Button("Search Part");
@@ -53,6 +55,10 @@ public class Main extends Application{
 
         createBOM.setOnMouseClicked(event -> {
             layout.setCenter(bomView.getCreateBOMView(warehouse, bomWarehouse));
+        });
+
+        searchBOM.setOnMouseClicked(event -> {
+            layout.setCenter(searchBOMView.getSearchBOMView(bomWarehouse));
         });
 
 

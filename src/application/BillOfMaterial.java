@@ -44,4 +44,23 @@ public class BillOfMaterial {
     public double getTotalCost() {
         return totalCost;
     }
+
+    public ArrayList<String> partNames() {
+        ArrayList<String> partNames = new ArrayList<>();
+        for (Part part : partList) {
+            partNames.add(part.getName());
+        }
+        return partNames;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(name)
+                .append("\nID: ").append(id)
+                .append("\nBOM Description: ").append(bomDesc)
+                .append("\nTotal Cost: ").append(totalCost)
+                .append("\nPart List: ").append(partNames());
+        return sb.toString();
+    }
 }
