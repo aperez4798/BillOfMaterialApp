@@ -1,0 +1,19 @@
+The purpose of this project is to develop an application that can track a manufacturing company's inventory.
+
+The goal of the project is to allow users to create Part objects within the application. Parts have the following details: part name, ID, stock, weight, manufacturer, supplier, type, and price.
+When a part is created, it is added to a Warehouse object. The Warehouse object is primarily made up of an ArrayList that contains all the parts in the current inventory.
+
+The application also allows users to create a Bill of Materials (BOM). A BOM acts like a checklist of items needed to create a product.
+
+For example, a BOM for building a computer would list all necessary components, such as the CPU, GPU, fans, external drives, motherboard, etc.
+In real production environments, a BOM can be detailed enough to include specific bolts, screws, and wires.
+
+In addition to the Part and BOM objects, there are also two Warehouse classes. The general Warehouse class creates a Warehouse object that contains an ArrayList.
+This Warehouse object holds all current items, even if the stock is zero. The purpose of keeping them in the ArrayList is to retain details such as manufacturing and supplier dates,
+which are useful when it’s time to reorder. When the stock of an item is zero, a BOM that requires that item cannot be created until the stock is replenished.
+The BOMWarehouse object holds all current BOMs that have been created.
+
+Users will be able to view all Parts and BOMs created within the application.
+
+Additionally, there are different view objects designed to change the layout of the GUI. The purpose of these views is to provide a user-friendly way to create new entries, view existing ones,
+and edit Parts and BOMs within the application.
